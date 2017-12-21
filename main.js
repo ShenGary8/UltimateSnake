@@ -18,10 +18,9 @@ snake = {
         }
         if (snake.direction == "d") {
             snake.y+=snake.speed; 
-       
+        }
         snake.x = constrain(snake.x, 0, width-10);
         snake.y = constrain(snake.y, 0, height-10);
-        }
     }
 }
 
