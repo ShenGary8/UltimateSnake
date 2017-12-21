@@ -1,8 +1,8 @@
 snake = {
     x: 250,
     y: 250,
-    w: 25,
-    speed: 3,
+    w: 20,
+    speed: 2,
     direction: "d",
     update: function () {
         if (snake.direction == "l") {
@@ -20,6 +20,10 @@ snake = {
     }
 }
 
+
+
+
+
 function controls() {
     if (keyIsDown(LEFT_ARROW)) {
         snake.direction = "l"
@@ -33,7 +37,10 @@ function controls() {
     if(keyIsDown(DOWN_ARROW)){
         snake.direction = "d"
     }
+ 
 }
+
+
 
 
 function setup() {
@@ -45,5 +52,9 @@ function draw() {
     background("limegreen");
     controls();
     snake.update();
+    var c = color(255, 204, 0);
+    fill(c);
+    noStroke();
     rect(snake.x-snake.w/2, snake.y-snake.w/2, snake.w, snake.w);
-}
+  
+} 
