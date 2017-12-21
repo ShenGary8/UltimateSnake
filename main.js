@@ -2,9 +2,11 @@ snake = {
     x: 250,
     y: 250,
     w: 20,
-    speed: 2,
+    speed: 3,
     direction: "d",
     update: function () {
+        
+        
         if (snake.direction == "l") {
             snake.x-=snake.speed;
         }
@@ -16,6 +18,9 @@ snake = {
         }
         if (snake.direction == "d") {
             snake.y+=snake.speed; 
+       
+        snake.x = constrain(snake.x, 0, width-10);
+        snake.y = constrain(snake.y, 0, height-10);
         }
     }
 }
