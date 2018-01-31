@@ -1,4 +1,5 @@
 
+var food;
 snake = {
     x: 250,
     y: 250,
@@ -50,16 +51,19 @@ function controls() {
 
 function setup() {
     createCanvas(500, 500);
-    // document.write("<p>Hello World!</p>")
+    food = createVector(random(width-10), random(height-10));
+    
 }
 
 function draw() {
     background("limegreen");
     controls();
     snake.update();
-    var c = color(255, 204, 0);
-    fill(c);
+    fill(255, 204, 0);
     noStroke();
     rect(snake.x-snake.w/2, snake.y-snake.w/2, snake.w, snake.w);
-  
+    
+    fill("red");
+    noStroke();
+    rect(food.x, food.y, snake.w, snake.w);
 } 
