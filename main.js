@@ -3,7 +3,7 @@ var food;
 snake = {
     x: 250,
     y: 250,
-    w: 20,
+    w: 10,
     speed: 3,
     direction: "d",
     update: function () {
@@ -21,8 +21,8 @@ snake = {
         if (snake.direction == "d") {
             snake.y+=snake.speed; 
         }
-        snake.x = constrain(snake.x, 0, width-10);
-        snake.y = constrain(snake.y, 0, height-10);
+        snake.x = constrain(snake.x, 0, width-snake.w/2);
+        snake.y = constrain(snake.y, 0, height-snake.w/2);
     }
 }
 
